@@ -4,6 +4,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/eurka/pom.xml" />
+        <option value="$PROJECT_DIR$/demoproducer/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-consumer/pom.xml" />
       </list>
     </option>
   </component>
