@@ -23,7 +23,7 @@ public class HelloService
      * @param name
      * @return
      */
-    @HystrixCommand(fallbackMethod = "errorMethod")
+//    @HystrixCommand(fallbackMethod = "errorMethod")
     public String hiServiceToTest(String name){
         ResponseEntity<Object> forEbtity = restTemplate.getForEntity("http://SERVICE-DEMO/hi?name=" + name, Object.class);
         Object forObject = restTemplate.getForObject("http://SERVICE-DEMO/hi?name=" + name, Object.class);

@@ -8,9 +8,9 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+@EnableHystrix
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableHystrix
 public class DemoConsumerApplication {
 
     public static void main(String[] args) {
