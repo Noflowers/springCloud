@@ -1,9 +1,18 @@
 server:
   port: 9002
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://127.0.0.1:9001/eureka/
 spring:
   application:
     name: service-producer
+eureka:
+  instance:
+    prefer-ip-address: true
+    #主动心跳时间 默认30S
+    lease-renewal-interval-in-seconds: 4
+    #设置服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除
+    lease-expiration-duration-in-seconds: 12
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9001/eureka/
+    #
+    fetch-registry: true
+    registry-fetch-interval-seconds: 8

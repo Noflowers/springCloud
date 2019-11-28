@@ -18,6 +18,7 @@ import java.util.Map;
 public class DemoproducerApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(DemoproducerApplication.class, args);
     }
 
