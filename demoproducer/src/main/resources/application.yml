@@ -12,7 +12,8 @@ eureka:
     lease-expiration-duration-in-seconds: 12
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:9001/eureka/
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
+#      defaultZone: http://127.0.0.1:9001/eureka/
     #
     fetch-registry: true
     registry-fetch-interval-seconds: 8

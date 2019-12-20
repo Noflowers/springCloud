@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@EnableEurekaClient
+//@EnableEurekaClient
 @SpringBootApplication
 public class DemoproducerApplication {
 

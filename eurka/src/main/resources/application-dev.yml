@@ -1,6 +1,8 @@
 server:
   port: 9001
-
+spring:
+  application:
+    name: hello-service
 eureka:
   instance:
     hostname: localhost
@@ -16,4 +18,5 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
