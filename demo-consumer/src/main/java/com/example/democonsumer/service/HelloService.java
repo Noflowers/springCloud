@@ -12,12 +12,9 @@ public class HelloService
 {
     @Autowired
     RestTemplate restTemplate;
-    @Autowired
-    producerService producerService;
 
     public String hiService(String name)
     {
-        producerService.reduceStock(name);
         return restTemplate.getForObject("http://SERVICE-PRODUCER/hi?name=" + name, String.class);
     }
 
@@ -28,7 +25,6 @@ public class HelloService
      */
 //    @HystrixCommand(fallbackMethod = "errorMethod")
     public Object hiServiceToTest(String name){
-        producerService.reduceStock(name);
         ResponseEntity<Object> forEbtity = restTemplate.getForEntity("http://SERVICE-PRODUCER/hi?name=" + name, Object.class);
         Object forObject = restTemplate.getForObject("http://SERVICE-PRODUCER/hi?name=" + name, Object.class);
         return forObject;
