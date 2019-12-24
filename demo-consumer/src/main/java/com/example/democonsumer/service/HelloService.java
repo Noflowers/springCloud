@@ -1,20 +1,11 @@
 package com.example.democonsumer.service;
 
-import com.example.democonsumer.util.ResultCode;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-@FeignClient("SERVICE-PRODUCER")
-public class producerService {
-    @RequestMapping(value = "/hi", method = RequestMethod.GET)
-    public String reduceStock(@RequestParam("name") String name);
-}
+
 
 @Service
 public class HelloService
@@ -37,6 +28,7 @@ public class HelloService
      */
 //    @HystrixCommand(fallbackMethod = "errorMethod")
     public Object hiServiceToTest(String name){
+        producerService.reduceStock(name);
         ResponseEntity<Object> forEbtity = restTemplate.getForEntity("http://SERVICE-PRODUCER/hi?name=" + name, Object.class);
         Object forObject = restTemplate.getForObject("http://SERVICE-PRODUCER/hi?name=" + name, Object.class);
         return forObject;
