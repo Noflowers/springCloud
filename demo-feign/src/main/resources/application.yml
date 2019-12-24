@@ -1,0 +1,14 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: service-feign
+eureka:
+  instance:
+    #主动心跳时间 默认30S
+    lease-renewal-interval-in-seconds: 4
+    #设置服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除
+    lease-expiration-duration-in-seconds: 12
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
